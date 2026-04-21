@@ -1,0 +1,121 @@
+# ============================================================
+# tho_obj-2-1-data-science-outreach — .gitignore
+# ============================================================
+
+# ------------------------------------------------------------
+# Staging areas — don't commit unsorted or queued-for-deletion files
+# ------------------------------------------------------------
+**/_inbox/
+_delete/
+
+# ------------------------------------------------------------
+# Data files — stored in Google Drive, not in Git
+# License-restricted or too large for version control.
+# See 01_data/README.md for Drive location and file index.
+# To track a specific small non-sensitive file:
+# use: git add --force path/to/file
+# ------------------------------------------------------------
+**/01_data/raw/
+**/01_data/clean/
+**/*.csv
+**/*.xlsx
+**/*.xls
+**/*.tsv
+**/*.sav
+**/*.dta
+
+# ------------------------------------------------------------
+# References — internal grant documents
+# ------------------------------------------------------------
+**/05_references/
+
+# ------------------------------------------------------------
+# Rendered outputs — regenerable from source
+# ------------------------------------------------------------
+**/03_outputs/*.pdf
+**/03_outputs/*.html
+**/03_outputs/*.png
+**/03_outputs/*.jpg
+
+# ------------------------------------------------------------
+# Archives — snapshots committed selectively after OSF registration
+# ------------------------------------------------------------
+**/06_archive/
+
+# ------------------------------------------------------------
+# PDFs elsewhere — stored in Drive or OSF
+# Force-add specific PDFs that belong in version control:
+# use: git add --force path/to/file.pdf
+# ------------------------------------------------------------
+*.pdf
+
+# ------------------------------------------------------------
+# Archives and zips
+# ------------------------------------------------------------
+*.zip
+*.tar.gz
+*.tar.bz2
+*.7z
+*.rar
+
+# ------------------------------------------------------------
+# Sensitive files — never commit
+# ------------------------------------------------------------
+*.env
+*.key
+*.pem
+secrets/
+credentials/
+
+# ------------------------------------------------------------
+# R / RStudio / Positron / Quarto
+# ------------------------------------------------------------
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+**/.quarto/
+*.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+# macOS
+# ------------------------------------------------------------
+.DS_Store
+**/.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon
+Icon?
+
+# ------------------------------------------------------------
+# Windows
+# ------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ------------------------------------------------------------
+# Microsoft Office temp / lock files
+# ------------------------------------------------------------
+~$*
+*.tmp
+*.bak
+
+# ------------------------------------------------------------
+# Editor / IDE
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*~
+.prettierrc
