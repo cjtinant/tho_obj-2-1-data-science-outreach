@@ -42,7 +42,52 @@ Dataset:
 
 ---
 
-## Folder structure (per workshop instance)
+## Current Project Tree
+
+```
+.
+├── _delete
+├── _inbox
+├── _staging
+├── data-sci-workshop-template        ← reusable shell for future workshops
+│   ├── 00_admin
+│   ├── 01_data
+│   ├── 02_docs
+│   ├── 03_outputs
+│   ├── 04_scripts
+│   ├── 05_references
+│   ├── 06_archive
+│   └── README.md
+├── PARKING.md
+├── README.md
+├── spotify-data-sci-workshop         ← this specific workshop instance
+│   ├── 00_admin
+│   ├── 01_data
+│   │   ├── kaggle_spotify-tracks-dataset.csv
+│   │   └── README.md
+│   ├── 02_docs
+│   │   ├── what-makes-a-hit_overview.md
+│   │   ├── workshop-prep-summary_2026-04-20_v1.md
+│   │   ├── workshop-prep-summary_2026-04-20_v2.md
+│   │   └── workshop-prep-summary_2026-04-21_v1.md
+│   ├── 03_outputs
+│   │   └── what-makes-a-hit_overview.pdf
+│   ├── 04_scripts
+│   │   └── NSCI253_hwk-3-1_TEMPLATE.R
+│   ├── 05_references
+│   │   ├── datasci workshop.jpg
+│   │   └── tho-report-yr3_obj-2-1.pdf
+│   ├── 06_archive
+│   ├── PARKING.md
+│   └── README.md
+
+```
+
+**Observation:** `spotify-data-sci-workshop` is the active instance and already
+has the Kaggle dataset in `01_data/`. The `data-sci-workshop-template` is the
+reusable shell — keep these in sync as the Spotify workshop matures.
+
+### Folder structure (per workshop instance)
 
 ```
 00_admin        Administrative artifacts (Zoom links, registration, logistics)
