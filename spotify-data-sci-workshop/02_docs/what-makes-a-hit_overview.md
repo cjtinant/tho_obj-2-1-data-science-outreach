@@ -1,176 +1,169 @@
-# 🎯 What Makes a Song Hit #1?
+# What Makes a Song Hit #1?
 
-### A Two-Hour Hands-On Data Science Exercise for Beginning Data Scientists (Zoom)
+### Data Science Workshop
+### Two-Hour Exercise for Beginning Data Scientists (Zoom)
 
-**Tools:** Google Sheets + R/RStudio **Level:** Some spreadsheet experience, no
-prior coding required **Format:** Full group instruction → individual
-exploration → breakout room challenge
+**Tools:** Posit Cloud + R/tidyverse
+**Level:** No prior coding required
+**Format:** Full group instruction → guided exploration → breakout challenge
 
 ---
 
 ## Learning Goals
 
-By the end of the session, students will be able to: - Navigate a real dataset
-and identify patterns using Google Sheets - Run a pre-written R script and
-interpret the output - Describe why code-based tools scale better than
-spreadsheets - Ask a data question and use a chart to support an answer
+By the end of the session, participants will be able to:
+
+- Open and run a pre-written R script in Posit Cloud
+- Identify patterns in a real dataset using scatter plots
+- Interpret the effect of adding color and trend lines to a visualization
+- Collaboratively ask and investigate a data-driven question
 
 ---
 
-## Materials to Prepare in Advance
+## Materials
 
-- A cleaned dataset (\~200 rows) from Kaggle's Spotify dataset, with columns:
-  song title, artist, genre, BPM, energy, danceability, valence, streams
-- A shared Google Sheet (view-only link, with a personal copy students can open)
-- A pre-written R script in a shared Google Doc with comments on every line
-- A short slide deck for the hook and transition moments
-- Breakout room assignments (groups of 3–4)
+- Cleaned dataset: `spotify_top200_cleaned.csv` — 232 songs, 8 columns
+- Pre-written R script: `02_what-makes-a-hit.R` (loaded in Posit Cloud)
+- Slide deck: `what-makes-a-hit_slides_v1.pptx`
+- Pre/post survey: Google Forms (links in `00_admin/00_workshop-admin-overview.md`)
+
+### Dataset columns
+
+| Column | Plain-language description |
+|---|---|
+| `track_name` | Song title |
+| `artist` | Artist name |
+| `genre` | Musical genre |
+| `bpm` | Tempo — beats per minute |
+| `energy` | Intensity (0 = calm → 1 = intense) |
+| `danceability` | How easy to groove to (0–1) |
+| `valence` | How happy it sounds (0 = sad → 1 = happy) |
+| `popularity` | Spotify score (0 = unknown → 100 = huge hit) |
 
 ---
 
 ## Session Timeline
 
-### 0:00–0:20 — Hook & Setup (20 min)
+### 0:00–0:15 — Hook + Dataset Orientation (15 min)
 
-**Facilitator actions:** - Play short clips of two contrasting songs (e.g., a
-high-energy pop track vs. a slow ballad) - Ask students in chat: _"Which one do
-you think got more streams — and why?"_ - Share the Google Sheet link; walk
-students through the columns together - Explain what each feature means in plain
-language (BPM = tempo, valence = "happiness," danceability = how easy it is to
-groove to)
+Play two contrasting song clips. Ask in Zoom chat:
+*"Which one do you think got more streams — and why?"*
 
-**Goal:** Build curiosity and orient students to the data before any analysis
-begins.
+Walk through the dataset columns in plain language. Build curiosity
+before any code appears.
+
+**Goal:** Orient participants to the data and the question.
 
 ---
 
-### 0:20–0:45 — Explore in Google Sheets (25 min)
+### 0:15–0:20 — Posit Cloud Setup (5 min)
 
-Students work through three guided questions using tools they already know.
+Paste the Posit Cloud link in Zoom chat. Everyone opens the workspace,
+confirms they see RStudio, and runs `library(tidyverse)`.
 
-**Question 1 — Averages** What is the average BPM of the top 10 songs by streams
-vs. the bottom 10? _Hint: Use `=AVERAGEIF()`_
-
-**Question 2 — Bar Chart** Create a bar chart showing total streams grouped by
-genre. _Which genre dominates? Does that surprise you?_
-
-**Question 3 — Scatter Plot** Plot energy (x-axis) vs. streams (y-axis). _Does
-higher energy seem to mean more streams?_
-
-**Debrief:** Ask students to drop their most surprising finding in the Zoom
-chat. Spend 3–5 minutes reacting to responses together.
+No installation required — just a browser.
 
 ---
 
-### 0:45–1:00 — Break + Transition (15 min)
+### 0:20–1:05 — Guided R Exploration (45 min)
 
-- 10-minute break
-
-**Transition talk (5 min):** _"Sheets is powerful for a few hundred rows. But
-what if we had 50,000 songs, or we wanted to update our analysis every week
-automatically? That's where code comes in. We're going to use R — and I promise,
-you won't be writing it from scratch."_
-
-- Paste the R script link in the chat
-- Students open RStudio and copy the script in — nothing to type from scratch
-
----
-
-### 1:00–1:35 — Guided R Exploration (35 min)
-
-Walk through the pre-written script together, pausing at each block. Students
-run it line by line.
+Walk through four code blocks together. Run each block, pause, discuss.
 
 **Block 1 — Load the data**
-
 ```r
-songs <- read.csv("spotify_top200.csv")
+library(tidyverse)
+songs <- read_csv("spotify_top200_cleaned.csv")
 head(songs)
+glimpse(songs)
 ```
-
-_"What do you notice? How is this different from looking at Sheets?"_
+*"What do you notice? How many rows? What are the columns?"*
 
 **Block 2 — Basic scatter plot**
-
 ```r
-library(ggplot2)
-ggplot(songs, aes(x = danceability, y = streams)) +
+ggplot(data = songs,
+       mapping = aes(x = energy, y = popularity)) +
   geom_point()
 ```
-
-_"What pattern do you see? What's hard to read?"_
+*"What pattern do you see? Does high energy mean more popularity?"*
 
 **Block 3 — Color by genre**
-
 ```r
-ggplot(songs, aes(x = danceability, y = streams, color = genre)) +
-  geom_point()
+ggplot(data = songs,
+       mapping = aes(x = energy, y = popularity, color = genre)) +
+  geom_point(size = 2, alpha = 0.7)
 ```
-
-_"What does adding color tell us that we couldn't see before?"_
+*"What does adding color tell us that we couldn't see before?"*
 
 **Block 4 — Add a trend line**
-
 ```r
-ggplot(songs, aes(x = danceability, y = streams)) +
-  geom_point(aes(color = genre)) +
+ggplot(data = songs,
+       mapping = aes(x = energy, y = popularity, color = genre)) +
+  geom_point(size = 2, alpha = 0.6) +
   geom_smooth(method = "lm", se = FALSE)
 ```
+*"Does the line go up or down? Do you trust it? Why or why not?"*
 
-_"What does the line suggest? Do you trust it? Why or why not?"_
-
-**Key teaching moment:** Emphasize that each new line adds one layer of insight
-— code is just a series of small, readable steps.
-
----
-
-### 1:35–1:50 — Mini Breakout Challenge (15 min)
-
-Students split into groups of 3–4 in Zoom breakout rooms. Each group gets a
-different question to investigate using the script as a starting point.
-
-**Group A — Genre differences** Is tempo (BPM) related to popularity differently
-for hip-hop vs. pop? Try coloring your scatter plot by genre and adding separate
-trend lines.
-
-**Group B — Emotional valence** Do "happier" songs (high valence scores) tend to
-get more streams? What does the trend line say?
-
-**Group C — The most average song** Which song in the dataset is closest to the
-mean value on every feature? How would you find it?
-
-Groups return to the main room and share their screen for 2–3 minutes each.
-Facilitator asks one follow-up question per group.
+**Key teaching point:** Each new line adds one layer of insight.
+Code is a series of small, readable steps.
 
 ---
 
-### 1:50–2:00 — Wrap-Up (10 min)
+### 1:05–1:20 — Breakout Challenge (15 min)
 
-**Discussion prompts:** - _"What's one thing the data showed you that surprised
-you?"_ - _"Was there a question you wanted to ask that you couldn't figure out
-how to answer?"_ - Show of hands: Did R feel scary? Useful? Both?
+Groups of 3–4 in Zoom breakout rooms. Each group swaps in a different
+column and investigates their own question.
 
-**Quick pointers for students who want to go further:** -
-[Kaggle](https://www.kaggle.com) — free datasets and beginner notebooks -
-[TidyTuesday](https://github.com/rfordatascience/tidytuesday) — a weekly
-real-world R dataset challenge - _R for Data Science_ by Hadley Wickham — free
-online at [r4ds.had.co.nz](https://r4ds.had.co.nz)
+| Group | Swap | Question |
+|---|---|---|
+| A | `x = bpm` | Is tempo related to popularity differently for hip-hop vs. pop? |
+| B | `x = valence` | Do happier songs tend to get more streams? |
+| C | `slice_min(distance)` | Is the most average song actually popular? |
+
+---
+
+### 1:20–1:45 — Share Back + Discussion (25 min)
+
+Each group shares screen for 2–3 min. Facilitator asks one follow-up
+question per group. Close with:
+*"What surprised you? Was there a question you couldn't figure out
+how to answer?"*
+
+---
+
+### 1:45–2:00 — Wrap-Up + Resources (15 min)
+
+Summarize the data science loop:
+**Raw data → scatter plot → color → trend line → your question**
+
+Resources for participants who want to go further:
+
+- **Kaggle** — kaggle.com (free datasets and beginner notebooks)
+- **TidyTuesday** — github.com/rfordatascience/tidytuesday
+- **R for Data Science** — r4ds.hadley.nz (free online)
+- **Posit Cloud** — posit.cloud (free R in your browser)
 
 ---
 
 ## Facilitator Notes
 
-- **Pacing:** The Sheets section can run long if students get curious — keep an
-  eye on the clock and cut Question 3 if needed.
-- **R anxiety:** Normalize confusion. Remind students that professional data
-  scientists Google things constantly.
-- **Zoom tips:** Keep your camera on during the hook; mute yourself while
-  students work independently; use the Zoom chat actively for low-stakes
-  participation.
-- **Backup plan:** If RStudio causes technical issues for some students, they
-  can follow along on the facilitator's shared screen while others run the code.
+For full session guidance see:
+`00_admin/03_facilitator-guide_2026-04-23_v2.md`
+
+For Zoom setup and day-of chat messages see:
+`00_admin/05_zoom-setup_v1.md`
+
+**R anxiety:** Normalize confusion early —
+*"Professional data scientists Google things constantly. That's not
+cheating — that's the job."*
+
+**Pacing:** The exploration can run long if participants get curious.
+Cut Block 4 if needed. The breakout challenge is the priority.
+
+**Note on the flyer:** The registration flyer mentions Google Sheets.
+Acknowledge at the start: *"Forget the flyer — we're going straight
+to Posit Cloud. It's actually easier."*
 
 ---
 
-_Next steps: Draft the student-facing R script, the dataset cleaning script, or
-the guided Sheets handout._
+*OLC MST / NSF TCUP Thokatakiya Grant — Objective 2.1*
+*First delivery: April 24, 2026 — Kyle, SD*
