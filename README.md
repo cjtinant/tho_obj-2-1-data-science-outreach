@@ -7,14 +7,14 @@
 
 ## Overview
 
-| Field                       | Detail                                                                                    |
-| --------------------------- | ----------------------------------------------------------------------------------------- |
-| Objective                   | Obj 2.1 — Friday EDS gatherings and workshops                                             |
-| Objective Lead              | J.F. Sawyer                                                                               |
-| Workshop Lead / Facilitator | C.J. Tinant                                                                               |
-| Supporting Personnel        | C. Griffith                                                                               |
-| Measurement                 | Bi-monthly student research and coding collaboratives; monthly R and Python EDS workshops |
-| Audience                    | OLC students, TCU faculty, and Tribal agency staff                                        |
+| Field                       | Detail                                             |
+| --------------------------- | -------------------------------------------------- |
+| Objective                   | Obj 2.1 — Friday EDS gatherings and workshops      |
+| Objective Lead              | J.F. Sawyer                                        |
+| Workshop Lead / Facilitator | C.J. Tinant                                        |
+| Supporting Personnel        | C. Griffith                                        |
+| Measurement                 | Monthly R and Python EDS workshops                 |
+| Audience                    | OLC students, TCU faculty, and Tribal agency staff |
 
 This repository contains materials for the OLC MST data science outreach
 workshop series, funded through the NSF TCUP Thokatakiya grant. Workshops are
@@ -46,10 +46,9 @@ Dataset:
 
 ```
 .
-├── _delete
 ├── _inbox
 ├── _staging
-├── data-sci-workshop-template        ← reusable shell for future workshops
+├── data-sci-workshop-template
 │   ├── 00_admin
 │   ├── 01_data
 │   ├── 02_docs
@@ -60,27 +59,27 @@ Dataset:
 │   └── README.md
 ├── PARKING.md
 ├── README.md
-├── spotify-data-sci-workshop         ← this specific workshop instance
-│   ├── 00_admin
-│   ├── 01_data
-│   │   ├── kaggle_spotify-tracks-dataset.csv
-│   │   └── README.md
-│   ├── 02_docs
-│   │   ├── what-makes-a-hit_overview.md
-│   │   ├── workshop-prep-summary_2026-04-20_v1.md
-│   │   ├── workshop-prep-summary_2026-04-20_v2.md
-│   │   └── workshop-prep-summary_2026-04-21_v1.md
-│   ├── 03_outputs
-│   │   └── what-makes-a-hit_overview.pdf
-│   ├── 04_scripts
-│   │   └── NSCI253_hwk-3-1_TEMPLATE.R
-│   ├── 05_references
-│   │   ├── datasci workshop.jpg
-│   │   └── tho-report-yr3_obj-2-1.pdf
-│   ├── 06_archive
-│   ├── PARKING.md
-│   └── README.md
-
+└── spotify-data-sci-workshop
+    ├── 00_admin
+    │   └── overview.md
+    ├── 01_data
+    │   ├── kaggle_spotify-tracks-dataset.csv
+    │   ├── README.md
+    │   └── spotify_top200_cleaned.csv
+    ├── 02_docs
+    │   ├── what-makes-a-hit_overview.md
+    │   └── workshop-prep-summary_2026-04-23_v3-1.md
+    ├── 03_outputs
+    │   └── what-makes-a-hit_overview.pdf
+    ├── 04_scripts
+    │   ├── 01_clean-spotify-data.R
+    │   └── 02_what-makes-a-hit.R
+    ├── 05_references
+    │   ├── datasci workshop.jpg
+    │   └── tho-report-yr3_obj-2-1.pdf
+    ├── 06_archive
+    ├── PARKING.md
+    └── README.md
 ```
 
 **Observation:** `spotify-data-sci-workshop` is the active instance and already
