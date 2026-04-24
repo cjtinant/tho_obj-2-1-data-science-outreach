@@ -7,7 +7,8 @@
 # ------------------------------------------------------------
 **/_inbox/
 _delete/
-
+**/PARKING.md
+**/_staging/
 # ------------------------------------------------------------
 # Data files — stored in Google Drive, not in Git
 # License-restricted or too large for version control.
@@ -121,9 +122,3 @@ Desktop.ini
 .prettierrc
 .Rproj.user
 .positai
-
-# ------------------------------------------------------------
-# Other
-# ------------------------------------------------------------
-
-PARKING.md
