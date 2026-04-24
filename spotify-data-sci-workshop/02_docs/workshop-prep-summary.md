@@ -3,7 +3,7 @@
 _Version 4 — 2026-04-23_
 
 **Event:** OLC MST / NSF TCUP (Thokatakiya) Data Science Workshop **Date:**
-April 24, 2026, 2–4 PM **Audience:** 9th graders (re-skinnable for TCU faculty /
+April 24, 2026, 2–4 PM **Audience:** Beginning Data Scientists (re-skinnable for TCU faculty /
 Tribal agency staff) **Tools:** Posit Cloud + R/tidyverse **Format:** Zoom (full
 group instruction → guided exploration → breakout challenge)
 

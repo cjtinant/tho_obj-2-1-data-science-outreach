@@ -1,6 +1,6 @@
 # 🎯 What Makes a Song Hit #1?
 
-### A Two-Hour Hands-On Data Science Exercise for 9th Graders (Zoom)
+### A Two-Hour Hands-On Data Science Exercise for Beginning Data Scientists (Zoom)
 
 **Tools:** Google Sheets + R/RStudio **Level:** Some spreadsheet experience, no
 prior coding required **Format:** Full group instruction → individual
