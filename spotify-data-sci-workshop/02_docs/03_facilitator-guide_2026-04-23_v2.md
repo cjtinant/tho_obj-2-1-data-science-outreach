@@ -3,7 +3,7 @@
 **Event:** OLC MST / NSF TCUP (Thokatakiya) Data Science Workshop
 **Date:** April 24, 2026, 2–4 PM
 **Facilitator:** Dr. Jason Tinant
-**Shared with:** J.F. Sawyer (for review and delivery support)
+**Co-facilitator:** Foster Sawyer
 **Format:** Zoom + Posit Cloud
 
 ---
@@ -51,17 +51,19 @@
 
 ### 0:15–0:20 — Posit Cloud Setup (5 min)
 
-1. Paste the Posit Cloud link in Zoom chat.
-2. Ask everyone to open it and confirm they see the RStudio interface.
-3. Direct them to open `02_what-makes-a-hit.R` in the Files pane.
-4. Ask them to run the first line: `library(tidyverse)`
-5. Confirm no errors before moving on.
+**Co-facilitator (Foster Sawyer):** Paste the Posit Cloud link in Zoom chat
+and monitor chat for students who can't get in.
 
-**If someone can't get in:** Have them follow along on your shared screen.
-They can still participate in discussion and breakout room work.
+1. Ask everyone to open the link and confirm they see the RStudio interface.
+2. Direct them to open `02_what-makes-a-hit.R` in the Files pane.
+3. Ask them to run the first line: `library(tidyverse)`
+4. Confirm no errors before moving on.
 
-**Backup:** If Posit Cloud is down entirely, share your screen and run the
-script yourself. Students call out what to change.
+**If someone can't get in:** Have them follow along on the facilitator's
+shared screen. They can still participate in discussion and breakout work.
+
+**Backup:** If Posit Cloud is down entirely, facilitator shares screen and
+runs the script. Students call out what to change.
 
 ---
 
@@ -117,8 +119,10 @@ breakout challenge is more valuable than finishing Block 4 perfectly.
 
 ### 1:05–1:20 — Breakout Challenge (15 min)
 
-Open breakout rooms. Each group gets one question. They use Blocks 2–4 as
-a starting point and swap in a different column.
+**Co-facilitator (Foster Sawyer):** Open breakout rooms and monitor chat
+during breakouts.
+
+Each group uses Blocks 2–4 as a starting point and swaps in a different column.
 
 | Group | Swap | Question |
 |---|---|---|
@@ -138,7 +142,7 @@ songs |>
   select(track_name, artist, genre, energy, danceability, valence, popularity)
 ```
 
-**Your job during breakouts:** Visit each room briefly. Ask one question.
+**During breakouts:** Visit each room briefly. Ask one question.
 Don't solve it for them — redirect with *"What happens if you change that
 one word?"*
 
@@ -165,14 +169,13 @@ to answer?"*
 1. Summarize the arc: raw data → scatter plot → color → trend line →
    your own question. That's the data science loop.
 2. Share resources (also in the script):
-   - **Kaggle** — kaggle.com (free datasets and beginner notebooks)
+   - **Kaggle** — kaggle.com
    - **TidyTuesday** — github.com/rfordatascience/tidytuesday
-   - **R for Data Science** — r4ds.hadley.nz (free online)
-   - **Posit Cloud** — posit.cloud (free R in your browser)
-3. Mention OLC MST and the Thokatakiya grant briefly — this workshop is
-   part of a larger effort to bring data science to the community.
-4. Thank everyone. Drop the Posit Cloud link one more time in chat so
-   students can return to it on their own.
+   - **R for Data Science** — r4ds.hadley.nz
+   - **Posit Cloud** — posit.cloud
+3. Mention OLC MST and the Thokatakiya grant briefly.
+4. Thank everyone. Co-facilitator drops the Posit Cloud link one more time
+   in chat so students can return to it on their own.
 
 ---
 
@@ -207,5 +210,5 @@ to Posit Cloud. It's actually easier."*
 
 ---
 
-*Drafted by C. Jason Tinant with Claude Sonnet 4.6 — 2026-04-23*
-*Shared with J.F. Sawyer for review*
+*Drafted by Dr. Jason Tinant with Claude Sonnet 4.6 — 2026-04-23*
+*Shared with Foster Sawyer (Co-facilitator) for review*
