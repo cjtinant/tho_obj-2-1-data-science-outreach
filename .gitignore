@@ -44,6 +44,11 @@ _delete/
 **/06_archive/
 
 # ------------------------------------------------------------
+# Assessment
+# ------------------------------------------------------------
+**/07_assessment/
+
+# ------------------------------------------------------------
 # PDFs elsewhere — stored in Drive or OSF
 # Force-add specific PDFs that belong in version control:
 # use: git add --force path/to/file.pdf
