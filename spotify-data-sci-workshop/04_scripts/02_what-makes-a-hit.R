@@ -1,4 +1,4 @@
-# 02_what-makes-a-hit_v3-1.R
+# 02_what-makes-a-hit.R
 # =============================================================================
 # AUTHOR:       C. Jason Tinant with Claude Sonnet 4.6
 # CREATED:      2026-04-21
@@ -12,28 +12,16 @@
 #               No installation required — everything runs in your browser.
 #               Run each block one at a time. Read the comments as you go.
 #
-# INPUTS:       spotify_top200_cleaned.csv  (already in your Posit Cloud project)
-#
+# INPUTS:       spotify_top200_cleaned.csv  (in your Posit Cloud project)
 # OUTPUTS:      Scatter plots rendered in the Plots pane
-#
 # DEPENDENCIES: tidyverse (pre-installed in the Posit Cloud project)
 #
-# SESSION FLOW:
-#   0:00–0:15   Hook + orient to the dataset
-#   0:15–0:20   Everyone opens Posit Cloud link, confirms they are in
-#   0:20–1:05   Guided R exploration — Blocks 1 through 4
-#   1:05–1:20   Breakout challenge — Groups A, B, C
-#   1:20–1:45   Share back + discussion
-#   1:45–2:00   Wrap-up + resources
+# SESSION FLOW: See 00_admin/03_facilitator-guide_2026-04-23_v2.md
 #
 # VERSION NOTES:
 #   v1-1  Initial draft — loaded data from Google Sheets
-#   v3    Revised — loads CSV directly from Posit Cloud project;
-#         Google Sheets dependency removed; timing updated
-#
-# NEXT STEPS:
-#   - Finalize cleaned CSV and upload to Posit Cloud workspace
-#   - Test full script on a fresh Posit Cloud login before April 24
+#   v3    Revised — CSV direct from Posit Cloud; Google Sheets removed
+#   v3-1  Header trimmed to SSOT convention
 # =============================================================================
 
 
