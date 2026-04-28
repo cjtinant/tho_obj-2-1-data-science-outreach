@@ -8,23 +8,23 @@
 
 ## Overview
 
-| Field | Detail |
-|---|---|
-| Objective | Obj 2.1 — Friday EDS gatherings and workshops |
-| Objective Lead | J.F. Sawyer |
-| Workshop Lead / Facilitator | C.J. Tinant |
-| Co-facilitator | Foster Sawyer |
-| Supporting Personnel | C. Griffith |
-| Measurement | Monthly R and Python EDS workshops |
-| Audience | OLC students, TCU faculty, and Tribal agency staff |
+| Field                       | Detail                                             |
+| --------------------------- | -------------------------------------------------- |
+| Objective                   | Obj 2.1 — Friday EDS gatherings and workshops      |
+| Objective Lead              | J.F. Sawyer                                        |
+| Workshop Lead / Facilitator | C.J. Tinant                                        |
+| Co-facilitator              | Foster Sawyer                                      |
+| Supporting Personnel        | C. Griffith                                        |
+| Measurement                 | Monthly R and Python EDS workshops                 |
+| Audience                    | OLC students, TCU faculty, and Tribal agency staff |
 
 This repository contains materials for the OLC MST data science outreach
-workshop series, funded through the NSF TCUP Thokatakiya grant. Workshops
-are designed to be reproducible and re-skinnable across datasets.
+workshop series, funded through the NSF TCUP Thokatakiya grant. Workshops are
+designed to be reproducible and re-skinnable across datasets.
 
 The first EDS workshop in Year 4 is scheduled for **April 24, 2026**, in
-conjunction with a college/career fair hosted by Missouri Breaks, Inc.,
-in the community of Kyle, SD.
+conjunction with a college/career fair hosted by Missouri Breaks, Inc., in the
+community of Kyle, SD.
 
 ---
 
@@ -70,9 +70,9 @@ tho_obj-2-1-data-science-outreach/
 
 ## Template and instance convention
 
-`data-sci-workshop-template/` is the reusable shell.
-Each workshop instance (e.g., `spotify-data-sci-workshop/`) follows
-the same structure. After each workshop:
+`data-sci-workshop-template/` is the reusable shell. Each workshop instance
+(e.g., `spotify-data-sci-workshop/`) follows the same structure. After each
+workshop:
 
 1. Strip instance-specific content from the template
 2. Archive the instance to `06_archive/` once OSF registration is complete
@@ -92,9 +92,9 @@ the same structure. After each workshop:
 
 ## Data convention
 
-Data files are stored locally in `01_data/` and in Posit Cloud.
-Large or license-restricted files are excluded from Git via `.gitignore`.
-See `spotify-data-sci-workshop/01_data/README.md` for file index.
+Data files are stored locally in `01_data/` and in Posit Cloud. Large or
+license-restricted files are excluded from Git via `.gitignore`. See
+`spotify-data-sci-workshop/01_data/README.md` for file index.
 
 To force-track a specific file: `git add --force path/to/file`
 
@@ -102,28 +102,28 @@ To force-track a specific file: `git add --force path/to/file`
 
 ## OSF integration
 
-This project will be registered on OSF after each workshop run to support
-FAIR data principles and NSF milestone reporting. Registration creates a
-timestamped snapshot. A DOI will be obtained once materials are stable.
+This project will be registered on OSF after each workshop run to support FAIR
+data principles and NSF milestone reporting. Registration creates a timestamped
+snapshot. A DOI will be obtained once materials are stable.
 
 ---
 
 ## Contacts
 
-| Person | Role |
-|---|---|
-| C. Jason Tinant | PI / Workshop Facilitator |
+| Person           | Role                                   |
+| ---------------- | -------------------------------------- |
+| C. Jason Tinant  | PI / Workshop Facilitator              |
 | J. Foster Sawyer | CoPI / Objective Lead / Co-facilitator |
-| Cami Griffith | Senior Personnel |
+| Cami Griffith    | Senior Personnel                       |
 
 ---
 
 ## Changelog
 
-| Date | Note |
-|---|---|
-| 2026-04-07 | Initial workshop structure created |
-| 2026-04-20 | Project consolidated and audited |
-| 2026-04-21 | Repo initialized; README and gitignore established |
+| Date       | Note                                                                  |
+| ---------- | --------------------------------------------------------------------- |
+| 2026-04-07 | Initial workshop structure created                                    |
+| 2026-04-20 | Project consolidated and audited                                      |
+| 2026-04-21 | Repo initialized; README and gitignore established                    |
 | 2026-04-23 | Posit Cloud workspace live; slide deck and facilitator guide complete |
-| 2026-04-24 | First workshop delivery — Kyle, SD |
+| 2026-04-24 | First workshop delivery — Kyle, SD                                    |
